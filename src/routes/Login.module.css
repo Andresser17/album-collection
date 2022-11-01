@@ -1,0 +1,128 @@
+.container {
+  height: 100vh;
+  padding: 5rem 2.5rem;
+}
+
+.arrow-cont {
+  display: flex;
+  justify-content: center;
+}
+
+.arrow {
+  width: 14rem;
+  height: 18rem;
+}
+
+.title {
+  max-width: 20rem;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.title strong {
+  color: rgb(var(--primary));
+}
+
+.subtitle {
+  max-width: 18rem;
+  margin-top: 2rem;
+  color: rgb(var(--text) / 0.8);
+}
+
+.login-text {
+  margin-top: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.login-text:hover {
+  color: rgb(var(--text) / 0.9);
+}
+
+.login-text:active {
+  color: rgb(var(--text) / 0.8);
+}
+
+.login-text svg {
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-left: 0.8rem;
+}
+
+@media only screen and (min-width: 640px) {
+  .container {
+    padding: 5rem 4rem;
+  }
+
+  .arrow-cont {
+    justify-content: flex-start;
+  }
+
+  .login-text {
+    margin-top: 6rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-cont {
+    padding-left: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .arrow {
+    width: 20rem;
+    height: 24rem;
+  }
+
+  .text-cont {
+    padding-left: 6rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+
+  .title {
+    font-size: 3.5rem;
+    max-width: 25rem;
+  }
+}
+
+@media only screen and (min-width: 1536px) {
+
+  .arrow {
+    width: auto;
+    height: auto;
+  }
+
+  .text-cont {
+    padding-left: 8rem;
+  }
+
+  .title {
+    font-size: 5rem;
+    max-width: 36rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    max-width: 20rem;
+  }
+
+  .login-text {
+    font-size: 1.2rem;
+  }
+}

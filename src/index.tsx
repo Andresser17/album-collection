@@ -5,6 +5,7 @@ import { store } from "./app/store";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import App from "./App";
 import ErrorPage from "./ErrorPage";
+import Login from "routes/Login";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 

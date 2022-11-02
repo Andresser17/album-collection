@@ -41,6 +41,14 @@ html {
   border-radius: 0.5rem;
 }
 
+/* remove webkit input default styles */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
 :root {
   --primary: 214 243 121;
   --primary-text: 33 33 33;

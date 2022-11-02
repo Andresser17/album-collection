@@ -1,0 +1,39 @@
+.container {
+  background-color: rgb(var(--card));
+  width: 100%;
+  max-width: 40rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  margin: 2rem 0;
+  display: flex;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.button {
+  background-color: rgb(var(--primary));
+  color: rgb(var(--primary-text));
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(var(--primary) / 0.9);
+}
+
+.button:active {
+  background-color: rgb(var(--primary) / 0.8);
+}

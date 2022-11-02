@@ -97,6 +97,13 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .container {
+    padding: 4rem;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+  }
+
   .albums {
     justify-content: space-around;
   }
@@ -115,9 +122,5 @@
 
   .albums {
     justify-content: space-between;
-  }
-
-  .albums-subtitle {
-    /* margin-bottom: 2rem; */
   }
 }

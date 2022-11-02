@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // Components
 import SearchInput from "./SearchInput";
-import Album from "components/Album";
+import Artist from "./Artist";
 import Pagination from "components/Pagination";
 import styles from "./Search.module.css";
 
@@ -26,13 +26,13 @@ function Search() {
       <div className={styles.albums}>
         <div className={styles["subtitle-cont"]}>
           <p className={styles["albums-subtitle"]}>
-            Guarda tus álbumes favoritos de {"{artistName}"}
+            Mostrando 4 resultados de {"{N Results}"}
           </p>
         </div>
-        <Album />
-        <Album />
-        <Album />
-        <Album />
+        <Artist />
+        <Artist />
+        <Artist />
+        <Artist />
       </div>
       <div className={styles["pagination-cont"]}>
         <Pagination

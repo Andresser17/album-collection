@@ -39,10 +39,6 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .container {
-    border-radius: 1.5rem;
-  }
-
   .subtitle {
     margin: 0;
     margin: 1rem 0;

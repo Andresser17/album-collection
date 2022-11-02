@@ -7,6 +7,7 @@ import App from "./App";
 import ErrorPage from "./ErrorPage";
 import Login from "routes/Login";
 import Search from "routes/Search";
+import ArtistDetails from "routes/ArtistDetails";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
@@ -18,9 +19,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Search />
-      }
-    ]
+        element: <Search />,
+      },
+      {
+        path: "/artist",
+        element: <ArtistDetails />,
+      },
+    ],
   },
   {
     path: "/login",

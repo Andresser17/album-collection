@@ -21,7 +21,7 @@ function CloseSession() {
 function Header() {
   return (
     <header className={styles.container}>
-      <Link to="/search" className={styles["nav-link"]}>
+      <Link to="/" className={styles["nav-link"]}>
         Buscar
       </Link>
       <Link to="my-albums" className={styles["nav-link"]}>

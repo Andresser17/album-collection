@@ -8,6 +8,7 @@ import ErrorPage from "./ErrorPage";
 import Login from "routes/Login";
 import Search from "routes/Search";
 import ArtistDetails from "routes/ArtistDetails";
+import UserAlbums from "routes/UserAlbums";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/artist",
         element: <ArtistDetails />,
+      },
+      {
+        path: "/my-albums",
+        element: <UserAlbums />,
       },
     ],
   },

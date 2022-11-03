@@ -30,6 +30,8 @@
 }
 
 .login-text {
+  color: rgb(var(--text));
+  text-decoration: none;
   margin-top: 2.5rem;
   font-weight: bold;
   cursor: pointer;

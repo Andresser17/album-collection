@@ -1,10 +1,37 @@
 import React from "react";
+import { nanoid } from "nanoid";
+import { useAppSelector } from "app/hooks";
+import { Navigate } from "react-router-dom";
 // Icons
 import { ReactComponent as LoginArrow } from "icons/login-arrow.svg";
 import { BsArrowRightShort as ArrowRight } from "react-icons/bs";
 import styles from "./Login.module.css";
+const { REACT_APP_CLIENT_ID: CLIENT_ID } = process.env;
 
 function Login() {
+  const { isLoggedIn } = useAppSelector((state) => state.auth);
+
+  const handleClick = async () => {
+    const state = nanoid(16);
+
+    const generated =
+      "https://accounts.spotify.com/authorize?" +
+      new URLSearchParams({
+        response_type: "code",
+        client_id: String(CLIENT_ID),
+        scope:
+          "user-read-private user-read-email user-library-read user-library-modify",
+        redirect_uri: "http://localhost:3000/authorize",
+        state,
+      });
+
+    await localStorage.setItem("state", state);
+
+    window.location.replace(generated);
+  };
+
+  if (isLoggedIn) return <Navigate to="/" />;
+
   return (
     <div className={styles.container}>
       <div className={styles["arrow-cont"]}>
@@ -17,9 +44,9 @@ function Login() {
         <p className={styles.subtitle}>
           Accede a tu cuenta para guardar tus albumes favoritos
         </p>
-        <p className={styles["login-text"]}>
+        <span onClick={handleClick} className={styles["login-text"]}>
           Inicia sesion con Spotify <ArrowRight />
-        </p>
+        </span>
       </div>
     </div>
   );

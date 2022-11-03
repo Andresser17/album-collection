@@ -22,8 +22,7 @@ function Pagination({
   setSelected,
 }: PaginationProps) {
   const handlePageClick = (e: { selected: number }) => {
-    console.log(e)
-    setSelected(e.selected);
+    setSelected(e.selected * limit);
   };
 
   return (

@@ -10,10 +10,19 @@ function ToggleMode() {
 }
 
 function CloseSession() {
+  const handleClick = async () => {
+    await localStorage.removeItem("spotify.access");
+    await localStorage.removeItem("state");
+
+    window.location.replace("/login");
+  };
+
   return (
     <div className={styles["close-session-cont"]}>
       <ExitArrow className={styles["close-session-icon"]} />
-      <span className={styles["close-session"]}>Cerrar Sesion</span>
+      <span onClick={handleClick} className={styles["close-session"]}>
+        Cerrar Sesion
+      </span>
     </div>
   );
 }

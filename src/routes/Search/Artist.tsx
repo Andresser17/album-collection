@@ -4,12 +4,30 @@ import imageSample from "images/artist-sample.png";
 // Icons
 import styles from "./Artist.module.css";
 
-function Artist() {
+interface ArtistProps {
+  id: string;
+  image: string;
+  name: string;
+  followers: number;
+  popularity: number;
+}
+
+function Artist({ id, image, name, followers, popularity }: ArtistProps) {
   return (
-    <Link to="/artist" className={styles.container}>
-      <img className={styles.image} src={imageSample} alt="Album" />
-      <p className={styles.title}>{"{ArtistName}"}</p>
-      <p className={styles.subtitle}>Seguidores: {"{n}"}</p>
+    <Link
+      to={`/artist/${id}`}
+      state={{ name, followers, popularity, image }}
+      className={styles.container}
+    >
+      <div className={styles["image-cont"]}>
+        <img
+          className={styles.image}
+          src={image.length > 0 ? image : imageSample}
+          alt="Artist"
+        />
+      </div>
+      <p className={styles.title}>{name}</p>
+      <p className={styles.subtitle}>Seguidores: {followers}</p>
     </Link>
   );
 }

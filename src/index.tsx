@@ -2,9 +2,10 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import ErrorPage from "./ErrorPage";
+import Authorize from "routes/Authorize";
 import Login from "routes/Login";
 import Search from "routes/Search";
 import ArtistDetails from "routes/ArtistDetails";
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
         element: <Search />,
       },
       {
-        path: "/artist",
+        path: "/artist/:id",
         element: <ArtistDetails />,
       },
       {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/authorize",
+    element: <Authorize />,
   },
 ]);
 

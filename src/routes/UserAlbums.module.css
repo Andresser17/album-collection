@@ -1,4 +1,5 @@
 .container {
+  width: 100%;
   min-height: 100vh;
   padding: 4rem 2rem;
 }
@@ -25,27 +26,11 @@
 }
 
 .albums {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.by-artist {
-  max-width: 76rem;
-  margin-bottom: 4rem;
-}
-
-.by-artist:last-child {
-  margin: 0;
-}
-
-.by-artist-title {
   width: 100%;
-}
-
-.by-artist-title p {
-  font-size: 1.8rem;
-  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-gap: 4rem;
 }
 
 .pagination-cont {
@@ -74,26 +59,21 @@
     line-height: 2rem;
     color: rgb(var(--text) / 0.8);
   }
-
-  .albums {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    justify-content: center;
-  }
-
-  .by-artist {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
 }
 
 @media only screen and (min-width: 768px) {
   .container {
     padding: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .title {
+    max-width: 28rem;
+    font-size: 4rem;
+  }
+
+  .albums {
+    justify-content: flex-start;
   }
 }

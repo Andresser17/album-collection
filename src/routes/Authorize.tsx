@@ -6,7 +6,6 @@ const {
   REACT_APP_CLIENT_ID: CLIENT_ID,
   REACT_APP_CLIENT_SECRET: CLIENT_SECRET,
   REACT_APP_REDIRECT_URI: REDIRECT_URI,
-  REACT_APP_VERCEL_URL: VERCEL_URL,
 } = process.env;
 
 function Authorize() {
@@ -33,9 +32,7 @@ function Authorize() {
         body: new URLSearchParams({
           grant_type: "authorization_code",
           code,
-          redirect_uri: REDIRECT_URI
-            ? String(REDIRECT_URI)
-            : `${VERCEL_URL}/authorize`,
+          redirect_uri: String(REDIRECT_URI),
         }),
       });
       if (!response.ok) return;

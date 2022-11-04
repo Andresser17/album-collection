@@ -6,11 +6,8 @@ import { Navigate } from "react-router-dom";
 import { ReactComponent as LoginArrow } from "icons/login-arrow.svg";
 import { BsArrowRightShort as ArrowRight } from "react-icons/bs";
 import styles from "./Login.module.css";
-const {
-  REACT_APP_CLIENT_ID: CLIENT_ID,
-  REACT_APP_REDIRECT_URI: REDIRECT_URI,
-  REACT_APP_VERCEL_URL: VERCEL_URL,
-} = process.env;
+const { REACT_APP_CLIENT_ID: CLIENT_ID, REACT_APP_REDIRECT_URI: REDIRECT_URI } =
+  process.env;
 
 function Login() {
   const { isLoggedIn } = useAppSelector((state) => state.auth);
@@ -25,9 +22,7 @@ function Login() {
         client_id: String(CLIENT_ID),
         scope:
           "user-read-private user-read-email user-library-read user-library-modify",
-        redirect_uri: REDIRECT_URI
-          ? String(REDIRECT_URI)
-          : `${VERCEL_URL}/authorize`,
+        redirect_uri: String(REDIRECT_URI),
         state,
       });
 

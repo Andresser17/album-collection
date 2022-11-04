@@ -9,7 +9,7 @@ import styles from "./Login.module.css";
 const {
   REACT_APP_CLIENT_ID: CLIENT_ID,
   REACT_APP_REDIRECT_URI: REDIRECT_URI,
-  VERCEL_URL,
+  REACT_APP_VERCEL_URL: VERCEL_URL,
 } = process.env;
 
 function Login() {
@@ -25,7 +25,9 @@ function Login() {
         client_id: String(CLIENT_ID),
         scope:
           "user-read-private user-read-email user-library-read user-library-modify",
-        redirect_uri: REDIRECT_URI ? String(REDIRECT_URI) : `${VERCEL_URL}/authorize`,
+        redirect_uri: REDIRECT_URI
+          ? String(REDIRECT_URI)
+          : `${VERCEL_URL}/authorize`,
         state,
       });
 

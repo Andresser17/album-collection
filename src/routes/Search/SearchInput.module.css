@@ -9,6 +9,14 @@
   display: flex;
 }
 
+.container:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.container-focus {
+  outline: 1px solid rgb(var(--primary) / 0.8);
+}
+
 .input {
   width: 100%;
   border: none;

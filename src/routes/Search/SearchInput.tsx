@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./SearchInput.module.css";
 
 function SearchInput({
@@ -9,6 +9,8 @@ function SearchInput({
   getSearch: (value: string) => void;
 }) {
   const [value, setValue] = useState("");
+  const [isFocus, setIsFocus] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = () => {
     getSearch(value);
@@ -19,8 +21,28 @@ function SearchInput({
   }, [defaultSearch]);
 
   return (
-    <div className={styles.container}>
+    <div
+      onClick={() => {
+        if (!isFocus) setIsFocus(true);
+        if (inputRef.current !== null) {
+          inputRef.current.focus();
+        }
+      }}
+      onBlur={() => {
+        setIsFocus(false);
+      }}
+      className={`${styles.container} ${
+        isFocus ? styles["container-focus"] : ""
+      }`}
+    >
       <input
+        ref={inputRef}
+        onKeyPress={(e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            handleSubmit();
+          }
+        }}
         value={value}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           setValue(e.currentTarget.value);

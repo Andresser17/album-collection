@@ -28,7 +28,7 @@ function ArtistDetails() {
       <div className={styles.top}>
         <img
           className={styles.image}
-          src={artistImage ?? imageSample}
+          src={artistImage || imageSample}
           alt="Album"
         />
         <div className={styles["top-text"]}>

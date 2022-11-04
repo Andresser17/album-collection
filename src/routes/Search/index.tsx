@@ -5,6 +5,7 @@ import SearchInput from "./SearchInput";
 import Artist from "./Artist";
 import Pagination from "components/Pagination";
 import LoadingSpinner from "components/LoadingSpinner";
+// Images
 import styles from "./Search.module.css";
 
 function Search() {
@@ -41,7 +42,7 @@ function Search() {
             <Artist
               key={artist.id}
               id={artist.id}
-              image={artist.images[1].url ?? ""}
+              image={artist.images.length > 0 ? artist.images[1].url : ""}
               name={artist.name}
               followers={artist.followers.total}
               popularity={artist.popularity}

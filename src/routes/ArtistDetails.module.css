@@ -40,28 +40,24 @@
   margin-bottom: 0.4rem;
 }
 
-.middle {
-  display: flex;
-  justify-content: center;
-}
-
-.albums {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  grid-gap: 4rem;
-}
-
 .subtitle-cont {
   width: 100%;
 }
 
-.albums-subtitle {
+.middle-subtitle p {
   color: rgb(var(--text) / 0.8);
   font-size: 1rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
   line-height: 1.5rem;
+}
+
+.albums {
+  min-height: 28rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  grid-gap: 4rem;
 }
 
 .pagination-cont {

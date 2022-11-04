@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useInstance } from "hooks/useApi";
 // Components
 import Album from "./Album";
+import LoadingSpinner from "components/LoadingSpinner";
 
 interface AlbumsProps {
   albums: Array<any>;
@@ -88,7 +89,7 @@ function Albums({ albums, isLoading, byArtist }: AlbumsProps) {
     if (!isLoading && albums) req();
   }, [isLoading, albums, axios, byArtist]);
 
-  return <>{mappedAlbums}</>;
+  return isLoading ? <LoadingSpinner /> : <>{mappedAlbums}</>;
 }
 
 export default Albums;

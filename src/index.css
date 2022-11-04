@@ -64,3 +64,18 @@ input[type="search"]::-webkit-search-results-decoration {
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
     0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
+
+.danger {
+  --primary: 227 81 61;
+  --primary-text: 255 255 255;
+}
+
+.dark {
+  --bg: 44 44 44;
+  --text: 255 255 255;
+}
+
+.light {
+  --bg: 205 200 200;
+  --text: 44 44 44;
+}

@@ -40,17 +40,19 @@ function ArtistDetails() {
           <p className={styles.subtitle}>Popularidad: {popularity}%</p>
         </div>
       </div>
-      <div className={styles.albums}>
-        <div className={styles["subtitle-cont"]}>
-          <p className={styles["albums-subtitle"]}>
+      <div className={styles.middle}>
+        <div className={styles["middle-subtitle"]}>
+          <p>
             Guarda tus álbumes favoritos de {artistName}
           </p>
         </div>
+        <div className={styles.albums}>
         <Albums
           albums={albums ? albums.items : []}
           isLoading={isLoading}
           byArtist
         />
+        </div>
       </div>
       <div className={styles["pagination-cont"]}>
         <Pagination

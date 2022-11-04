@@ -37,7 +37,7 @@ function Album({
         onClick={() => {
           toggleAlbum(id, addedByUser);
         }}
-        className={styles.button}
+        className={`${styles.button} ${addedByUser ? "danger" : ""}`}
       >
         {!addedByUser ? "+ Add album" : "- Remove album"}
       </button>

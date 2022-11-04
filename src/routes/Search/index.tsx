@@ -4,20 +4,15 @@ import useApi from "hooks/useApi";
 import SearchInput from "./SearchInput";
 import Artist from "./Artist";
 import Pagination from "components/Pagination";
+import LoadingSpinner from "components/LoadingSpinner";
 import styles from "./Search.module.css";
 
 function Search() {
   const [offset, setOffset] = useState(0);
   const [search, setSearch] = useState("Nirvana");
-  const [isLoading, data, error] = useApi(
+  const [isLoading, data] = useApi(
     `/search?q=${search}&type=artist&offset=${offset}&limit=4`
   );
-
-  // console.log({ isLoading, data, error });
-
-  // const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setSearch(e.currentTarget.value);
-  // };
 
   return (
     <div className={styles.container}>
@@ -39,18 +34,20 @@ function Search() {
             Mostrando 4 resultados de {data ? data.artists.total : 0}
           </p>
         </div>
-        {data && data.artists.items.length > 0
-          ? data.artists.items.map((artist: any) => (
-              <Artist
-                key={artist.id}
-                id={artist.id}
-                image={artist.images[1].url ?? ""}
-                name={artist.name}
-                followers={artist.followers.total}
-                popularity={artist.popularity}
-              />
-            ))
-          : "No results"}
+        {isLoading ? (
+          <LoadingSpinner />
+        ) : (
+          data.artists.items.map((artist: any) => (
+            <Artist
+              key={artist.id}
+              id={artist.id}
+              image={artist.images[1].url ?? ""}
+              name={artist.name}
+              followers={artist.followers.total}
+              popularity={artist.popularity}
+            />
+          ))
+        )}
       </div>
       <div className={styles["pagination-cont"]}>
         <Pagination

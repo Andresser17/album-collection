@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // Icons
 import { BsBoxArrowRight as ExitArrow } from "react-icons/bs";
@@ -6,7 +6,33 @@ import { FiSun, FiMoon } from "react-icons/fi";
 import styles from "./Header.module.css";
 
 function ToggleMode() {
-  return <FiSun className={styles["mode-icon"]} />;
+  const [theme, setTheme] = useState<string | null>("");
+
+  const handleClick = (mode: string) => {
+    if (mode === "light") {
+      document.documentElement.classList.replace("dark", mode);
+    } else document.documentElement.classList.replace("light", mode);
+
+    localStorage.setItem("theme", mode);
+    setTheme(mode);
+  };
+
+  useEffect(() => {
+    const mode = localStorage.getItem("theme");
+    setTheme(mode);
+  }, []);
+
+  return theme === "dark" ? (
+    <FiSun
+      onClick={(e) => handleClick("light")}
+      className={styles["mode-icon"]}
+    />
+  ) : (
+    <FiMoon
+      onClick={(e) => handleClick("dark")}
+      className={styles["mode-icon"]}
+    />
+  );
 }
 
 function CloseSession() {

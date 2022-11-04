@@ -7,7 +7,7 @@ import styles from "./UserAlbums.module.css";
 
 function UserAlbums() {
   const [offset, setOffset] = useState(0);
-  const [isLoading, albums] = useApi(`/me/albums?offset=${offset}&limit=4`);
+  const [isLoading, albums] = useApi(`/me/albums?offset=${offset}&limit=8`);
 
   return (
     <div className={styles.container}>
@@ -28,7 +28,7 @@ function UserAlbums() {
           selected={offset}
           setSelected={setOffset}
           pageCount={albums ? albums.total : 0}
-          limit={4}
+          limit={8}
         />
       </div>
     </div>

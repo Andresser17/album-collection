@@ -25,7 +25,7 @@ function Login() {
         client_id: String(CLIENT_ID),
         scope:
           "user-read-private user-read-email user-library-read user-library-modify",
-        redirect_uri: REDIRECT_URI ? REDIRECT_URI : `${VERCEL_URL}/authorize`,
+        redirect_uri: REDIRECT_URI ? String(REDIRECT_URI) : `${VERCEL_URL}/authorize`,
         state,
       });
 
